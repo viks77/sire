@@ -1,0 +1,48 @@
+<resources>
+
+    <string name="app_name">Music Sight Reading</string>
+    <string name="menu_settings">Настройки</string>
+    <string name="version">Версия 1.0</string>
+    <string name="slogan">Читай ноты быстрее!</string>
+    <string name="practice_button">Практика</string>
+    <string name="quiz_button">Экзамен</string>
+    <string name="stats_button">Статистика</string>
+    <string name="clefs">Ключи</string>
+    <string name="treble">Скрипичный</string>
+    <string name="bass">Басовый</string>
+    <string name="tenor">Тенорный</string>
+    <string name="alto">Альтовый</string>
+    <string name="practice">Практика</string>
+    <string name="enable_show_correct">Показывать правильный ответ при ошибке</string>
+    <string name="save_options">Сохранить</string>
+    <string name="cancel_options">Отменить</string>
+    <string name="wrong_attempts">Неправильные попытки</string>
+    <string name="total_time">Время</string>
+    <string name="quiz_limit">Количество нот</string>
+    <string name="quiz">Экзамен</string>
+    
+    <string-array name="note_names_english">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+    </string-array>
+    <string-array name="note_names_italian">
+        <item>Ля</item>
+        <item>Си</item>
+        <item>До</item>
+        <item>Ре</item>
+        <item>Ми</item>
+        <item>Фа</item>
+        <item>Соль</item>
+    </string-array>
+
+    <string name="note_naming_style">Стиль наименования нот</string>
+    <string name="note_naming_english">Английский (C,D,E,F,G,A,B)</string>
+    <string name="note_naming_italian">Итальянский (До,Ре,Ми,Фа,Соль,Ля,Си)</string>
+    <string name="difficulty_level">Уровень трудности</string>
+    
+</resources>

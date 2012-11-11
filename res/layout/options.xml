@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
+    
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/clefs" 
+        android:padding="5.0dip"
+        android:textColor="#ffffffff"
+        android:background="#ff505050"
+        android:textStyle="bold"
+        android:textSize="16.0sp"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*" 
+        android:paddingLeft="10dip" 
+        android:paddingRight="10dip" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/enable_treble_clef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/treble" />
+
+            <CheckBox
+                android:id="@+id/enable_bass_clef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bass" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/enable_tenor_clef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tenor" />
+
+            <CheckBox
+                android:id="@+id/enable_alto_clef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/alto" />
+
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/note_naming_style" 
+        android:padding="5.0dip"
+        android:textColor="#ffffffff"
+        android:background="#ff505050"
+        android:textStyle="bold"
+        android:textSize="16.0sp"/>
+
+    <RadioGroup
+        android:id="@+id/naming_style_radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:paddingLeft="10dip" 
+        android:paddingRight="10dip" >
+        
+        <RadioButton
+            android:id="@+id/note_naming_english"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/note_naming_english" />
+
+        <RadioButton
+            android:id="@+id/note_naming_italian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/note_naming_italian" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff505050"
+        android:padding="5.0dip"
+        android:text="@string/practice"
+        android:textColor="#ffffffff"
+        android:textSize="16.0sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:paddingLeft="10dip" 
+        android:paddingRight="10dip" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:paddingTop="5dip" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/quiz_limit"
+                android:paddingRight="10dip" />
+
+            <EditText
+                android:id="@+id/practice_limit"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:ems="3"
+                android:inputType="number" >
+
+            </EditText>
+
+        </LinearLayout>
+        
+        <CheckBox
+            android:id="@+id/enable_show_correct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enable_show_correct" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff505050"
+        android:padding="5.0dip"
+        android:text="@string/quiz"
+        android:textColor="#ffffffff"
+        android:textSize="16.0sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:paddingLeft="10dip" 
+        android:paddingRight="10dip" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:paddingTop="5dip" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/quiz_limit"
+                android:paddingRight="10dip" />
+
+            <EditText
+                android:id="@+id/quiz_limit"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:ems="3"
+                android:inputType="number" >
+
+            </EditText>
+
+        </LinearLayout>
+   </LinearLayout>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff505050"
+        android:padding="5.0dip"
+        android:text="@string/difficulty_level"
+        android:textColor="#ffffffff"
+        android:textSize="16.0sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:paddingLeft="10dip" 
+        android:paddingRight="10dip"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip" >
+
+        <SeekBar
+            android:id="@+id/difficulty_level"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:id="@+id/difficulty_level_text"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_horizontal"
+            android:paddingLeft="20dip"
+            android:text="0"
+            android:textSize="28.0sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="10dip" >
+        
+        <Button
+            android:id="@+id/save_button"
+            android:onClick="onSaveClicked"
+            android:layout_width="100.0dip"
+            android:layout_height="wrap_content"
+            android:text="@string/save_options" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:onClick="onCancelClicked"
+            android:layout_width="100.0dip"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel_options" />
+
+    </LinearLayout>
+    </LinearLayout>
+</ScrollView>

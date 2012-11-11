@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    android:orientation="horizontal" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"
+  	xmlns:android="http://schemas.android.com/apk/res/android">
+  	
+
+    <FrameLayout 
+        android:layout_width="0dip" 
+        android:layout_height="fill_parent" 
+        android:layout_weight="9">
+        
+        <ImageView 
+            android:id="@+id/staff" 
+            android:layout_gravity="center_horizontal|center_vertical" 
+            android:layout_width="fill_parent" 
+            android:layout_height="fill_parent" />
+        
+        <ImageView 
+            android:id="@+id/clef"  
+            android:layout_gravity="center_horizontal|center_vertical" 
+            android:layout_width="fill_parent" 
+            android:layout_height="fill_parent" />
+        
+        <ImageView 
+            android:id="@+id/note"  
+            android:layout_gravity="center_horizontal|center_vertical" 
+            android:layout_width="fill_parent" 
+            android:layout_height="fill_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="10dip"
+            android:gravity="center_vertical" >
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dip" />
+
+            <TextView
+                android:id="@+id/time_elapsed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="TextView"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="TextView"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+        
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:padding="10.0dip"
+        android:layout_weight="4" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/keyC"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1.0"
+                android:onClick="onKeyC"
+                android:text="C" />
+
+            <Button
+                android:id="@+id/keyD"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1.0"
+                android:onClick="onKeyD"
+                android:text="D" />
+
+            <Button
+                android:id="@+id/keyE"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1.0"
+                android:onClick="onKeyE"
+                android:text="E" />
+
+            <Button
+                android:id="@+id/keyF"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1.0"
+                android:onClick="onKeyF"
+                android:text="F" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+             android:gravity="center_vertical"
+             android:weightSum="4.0"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/keyG"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1.0"
+                android:onClick="onKeyG"
+                android:text="G" />
+
+            <Button
+                android:id="@+id/keyA"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1.0"
+                android:onClick="onKeyA"
+                android:text="A" />
+
+            <Button
+                android:id="@+id/keyB"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1.0"
+                android:onClick="onKeyB"
+                android:text="B" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+ </LinearLayout>
