@@ -2,7 +2,7 @@
 
     <string name="app_name">Music Sight Reading</string>
     <string name="menu_settings">Настройки</string>
-    <string name="version">Версия 1.0</string>
+    <string name="version">Версия 1.0.1</string>
     <string name="slogan">Читай ноты быстрее!</string>
     <string name="practice_button">Практика</string>
     <string name="quiz_button">Экзамен</string>
