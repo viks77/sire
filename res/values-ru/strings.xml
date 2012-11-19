@@ -2,7 +2,7 @@
 
     <string name="app_name">Music Sight Reading</string>
     <string name="menu_settings">Настройки</string>
-    <string name="version">Версия 1.0.1</string>
+    <string name="version">Версия %s</string>
     <string name="slogan">Читай ноты быстрее!</string>
     <string name="practice_button">Практика</string>
     <string name="quiz_button">Экзамен</string>
@@ -20,7 +20,7 @@
     <string name="total_time">Время</string>
     <string name="quiz_limit">Количество нот</string>
     <string name="quiz">Экзамен</string>
-    
+
     <string-array name="note_names_english">
         <item>A</item>
         <item>B</item>
@@ -44,5 +44,5 @@
     <string name="note_naming_english">Английский (C,D,E,F,G,A,B)</string>
     <string name="note_naming_italian">Итальянский (До,Ре,Ми,Фа,Соль,Ля,Си)</string>
     <string name="difficulty_level">Уровень трудности</string>
-    
+
 </resources>
