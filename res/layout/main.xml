@@ -24,7 +24,7 @@
         android:typeface="serif" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="0dip"
         android:layout_weight="1"
         android:orientation="vertical"
@@ -35,7 +35,7 @@
 
         <Button
             android:id="@+id/practice_button"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="0dip"
             android:layout_weight="1.0"
             android:onClick="onPracticeClicked"
@@ -44,7 +44,7 @@
 
         <Button
             android:id="@+id/quiz_button"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="0dip"
             android:layout_weight="1.0"
             android:onClick="onQuizClicked"
@@ -53,7 +53,7 @@
 
         <Button
             android:id="@+id/stats_button"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="0dip"
             android:layout_weight="1.0"
             android:onClick="onStatsClicked"

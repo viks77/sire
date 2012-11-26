@@ -24,7 +24,7 @@
         android:typeface="serif" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="0dip"
         android:layout_weight="1"
         android:gravity="center_horizontal|center_vertical"
@@ -32,11 +32,11 @@
         android:paddingLeft="30dip"
         android:paddingRight="30dip"
         android:weightSum="3.0" >
-        
+
         <Button
             android:id="@+id/practice_button"
             android:layout_width="0dip"
-            android:layout_height="match_parent"
+            android:layout_height="fill_parent"
             android:layout_weight="1.0"
             android:onClick="onPracticeClicked"
             android:text="@string/practice_button"
@@ -45,7 +45,7 @@
         <Button
             android:id="@+id/quiz_button"
             android:layout_width="0dip"
-            android:layout_height="match_parent"
+            android:layout_height="fill_parent"
             android:layout_weight="1.0"
             android:onClick="onQuizClicked"
             android:text="@string/quiz_button"
@@ -54,7 +54,7 @@
         <Button
             android:id="@+id/stats_button"
             android:layout_width="0dip"
-            android:layout_height="match_parent"
+            android:layout_height="fill_parent"
             android:layout_weight="1.0"
             android:onClick="onStatsClicked"
             android:text="@string/stats_button"
@@ -67,7 +67,7 @@
         android:id="@+id/info_layout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:padding="5dip" 
+        android:padding="5dip"
         android:gravity="center_horizontal|center_vertical" >
 
         <TextView

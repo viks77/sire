@@ -10,6 +10,7 @@ import com.larvalabs.svgandroid.SVGParser;
 
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -250,11 +251,19 @@ public class QuizActivity extends Activity {
 			time_update_thread = null;
     	}
     }
-
+/*
     @Override
     public void onBackPressed () {
     	stop ();
     	super.onBackPressed ();
+    }
+*/
+    @Override
+    public boolean onKeyDown (int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+            stop ();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     public void onKeyA (View view) { clicked (0); }

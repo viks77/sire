@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent" android:layout_height="fill_parent">
-    
+
     <LinearLayout
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/clefs" 
+        android:text="@string/clefs"
         android:padding="5.0dip"
         android:textColor="#ffffffff"
         android:background="#ff505050"
@@ -17,10 +17,10 @@
         android:textSize="16.0sp"/>
 
     <TableLayout
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:stretchColumns="*" 
-        android:paddingLeft="10dip" 
+        android:stretchColumns="*"
+        android:paddingLeft="10dip"
         android:paddingRight="10dip" >
 
         <TableRow
@@ -63,9 +63,9 @@
     </TableLayout>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/note_naming_style" 
+        android:text="@string/note_naming_style"
         android:padding="5.0dip"
         android:textColor="#ffffffff"
         android:background="#ff505050"
@@ -74,27 +74,27 @@
 
     <RadioGroup
         android:id="@+id/naming_style_radiogroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:paddingLeft="10dip" 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dip"
         android:paddingRight="10dip" >
-        
+
         <RadioButton
             android:id="@+id/note_naming_english"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="@string/note_naming_english" />
 
         <RadioButton
             android:id="@+id/note_naming_italian"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/note_naming_italian" />
     </RadioGroup>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="#ff505050"
         android:padding="5.0dip"
@@ -104,15 +104,15 @@
         android:textStyle="bold" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" 
-        android:paddingLeft="10dip" 
+        android:orientation="vertical"
+        android:paddingLeft="10dip"
         android:paddingRight="10dip" >
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:paddingTop="5dip" >
 
             <TextView
@@ -132,17 +132,17 @@
             </EditText>
 
         </LinearLayout>
-        
+
         <CheckBox
             android:id="@+id/enable_show_correct"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/enable_show_correct" />
 
     </LinearLayout>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="#ff505050"
         android:padding="5.0dip"
@@ -152,15 +152,15 @@
         android:textStyle="bold" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" 
-        android:paddingLeft="10dip" 
+        android:orientation="vertical"
+        android:paddingLeft="10dip"
         android:paddingRight="10dip" >
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:paddingTop="5dip" >
 
             <TextView
@@ -181,9 +181,9 @@
 
         </LinearLayout>
    </LinearLayout>
-    
+
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="#ff505050"
         android:padding="5.0dip"
@@ -193,9 +193,9 @@
         android:textStyle="bold" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:paddingLeft="10dip" 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
         android:paddingBottom="10dip" >
@@ -225,7 +225,7 @@
         android:gravity="center_horizontal|center_vertical"
         android:orientation="horizontal"
         android:paddingTop="10dip" >
-        
+
         <Button
             android:id="@+id/save_button"
             android:onClick="onSaveClicked"
