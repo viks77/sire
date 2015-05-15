@@ -2,7 +2,7 @@
 
     <string name="app_name">Music Sight Reading</string>
     <string name="menu_settings">Settings</string>
-    <string name="version">Vesrion %s</string>
+    <string name="version">Version %s</string>
     <string name="slogan">Read music sheets faster!</string>
     <string name="practice_button">Practice</string>
     <string name="quiz_button">Quiz</string>
