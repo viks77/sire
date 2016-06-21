@@ -1,0 +1,50 @@
+<resources>
+
+    <string name="app_name">"Music Sight Reading"</string>
+    <string name="menu_settings">"Ajustes"</string>
+    <string name="version">"Versión %s"</string>
+    <string name="slogan">"Lea las partituras más rápido!"</string>
+    <string name="practice_button">"Práctica"</string>
+    <string name="quiz_button">"Test"</string>
+    <string name="stats_button">"Estadísticas"</string>
+    <string name="options_button">"Opciones"</string>
+    <string name="clefs">"Claves"</string>
+    <string name="treble">"Sol"</string>
+    <string name="bass">"Fa"</string>
+    <string name="tenor">"Do (4ª)"</string>
+    <string name="alto">"Do (3ª)"</string>
+    <string name="practice">"Práctica"</string>
+    <string name="enable_random">"Aleatorio"</string>
+    <string name="enable_show_correct">"Mostrar respuestas correctas cuando te equivocas"</string>
+    <string name="save_options">"Guardar"</string>
+    <string name="cancel_options">"Cancelar"</string>
+    <string name="wrong_attempts">"Intentos erróneos"</string>
+    <string name="total_time">"Tiempo Total"</string>
+    <string name="quiz_limit">"Número de notas"</string>
+    <string name="quiz">"Test"</string>
+
+    <string-array name="note_names_english">
+        <item>"A"</item>
+        <item>"B"</item>
+        <item>"C"</item>
+        <item>"D"</item>
+        <item>"D"</item>
+        <item>"F"</item>
+        <item>"G"</item>
+    </string-array>
+    <string-array name="note_names_italian">
+        <item>"La"</item>
+        <item>"Si"</item>
+        <item>"Do"</item>
+        <item>"Re"</item>
+        <item>"Mi"</item>
+        <item>"Fa"</item>
+        <item>"Sol"</item>
+    </string-array>
+
+    <string name="note_naming_style">"Sistema de notación"</string>
+    <string name="note_naming_english">"Inglés (C, D, E, F, G, A, B)"</string>
+    <string name="note_naming_italian">"Latino (Do, Re, Mi, Fa, Sol, La, Si)"</string>
+    <string name="difficulty_level">"Nivel de dificultad"</string>
+
+</resources>
