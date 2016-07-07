@@ -22,6 +22,7 @@ public class OptionsActivity extends Activity {
     private CheckBox enable_alto_clef_check;
     private CheckBox enable_tenor_clef_check;
     private CheckBox enable_show_correct_check;
+	private CheckBox enable_vibration_on_wrong_check;
 
     private RadioGroup naming_style_radiogroup;
     private RadioButton naming_english_radio;
@@ -42,11 +43,12 @@ public class OptionsActivity extends Activity {
         options = getSharedPreferences ("sire", 0);
 		edit_options = options.edit ();
 
-        enable_treble_clef_check  = (CheckBox) findViewById (R.id.enable_treble_clef); 
-        enable_bass_clef_check    = (CheckBox) findViewById (R.id.enable_bass_clef);
-        enable_alto_clef_check    = (CheckBox) findViewById (R.id.enable_alto_clef);
-        enable_tenor_clef_check   = (CheckBox) findViewById (R.id.enable_tenor_clef);
-        enable_show_correct_check = (CheckBox) findViewById (R.id.enable_show_correct);
+        enable_treble_clef_check        = (CheckBox) findViewById (R.id.enable_treble_clef);
+        enable_bass_clef_check          = (CheckBox) findViewById (R.id.enable_bass_clef);
+        enable_alto_clef_check          = (CheckBox) findViewById (R.id.enable_alto_clef);
+        enable_tenor_clef_check         = (CheckBox) findViewById (R.id.enable_tenor_clef);
+        enable_show_correct_check       = (CheckBox) findViewById (R.id.enable_show_correct);
+		enable_vibration_on_wrong_check = (CheckBox) findViewById (R.id.enable_vibration_on_wrong);
 
         naming_style_radiogroup = (RadioGroup)  findViewById (R.id.naming_style_radiogroup);
         naming_english_radio    = (RadioButton) findViewById (R.id.note_naming_english);
@@ -64,6 +66,7 @@ public class OptionsActivity extends Activity {
 	        enable_alto_clef_check.setChecked (options.getBoolean ("enable_alto_clef", false));
 	        enable_tenor_clef_check.setChecked (options.getBoolean ("enable_tenor_clef", false));
 	        enable_show_correct_check.setChecked (options.getBoolean ("enable_show_correct", true));
+			enable_vibration_on_wrong_check.setChecked (options.getBoolean ("enable_vibration_on_wrong", true));
 	
 			switch (options.getInt ("note_naming_style", 0)) {
 				case 1:
@@ -122,11 +125,12 @@ public class OptionsActivity extends Activity {
 			    break save_options_block;
 			}
 		
-			edit_options.putBoolean ("enable_treble_clef",  enable_treble_clef_check.isChecked ());
-			edit_options.putBoolean ("enable_bass_clef",    enable_bass_clef_check.isChecked ());
-			edit_options.putBoolean ("enable_alto_clef",    enable_alto_clef_check.isChecked ());
-			edit_options.putBoolean ("enable_tenor_clef",   enable_tenor_clef_check.isChecked ());
-			edit_options.putBoolean ("enable_show_correct", enable_show_correct_check.isChecked ());
+			edit_options.putBoolean ("enable_treble_clef",        enable_treble_clef_check.isChecked ());
+			edit_options.putBoolean ("enable_bass_clef",          enable_bass_clef_check.isChecked ());
+			edit_options.putBoolean ("enable_alto_clef",          enable_alto_clef_check.isChecked ());
+			edit_options.putBoolean ("enable_tenor_clef",         enable_tenor_clef_check.isChecked ());
+			edit_options.putBoolean ("enable_show_correct",       enable_show_correct_check.isChecked ());
+			edit_options.putBoolean ("enable_vibration_on_wrong", enable_vibration_on_wrong_check.isChecked ());
 			
 			switch (naming_style_radiogroup.getCheckedRadioButtonId ()) {
 			

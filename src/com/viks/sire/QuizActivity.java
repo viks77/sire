@@ -8,6 +8,7 @@ import java.util.Random;
 import com.larvalabs.svgandroid.SVG;
 import com.larvalabs.svgandroid.SVGParser;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.KeyEvent;
@@ -28,6 +29,7 @@ public class QuizActivity extends Activity {
 	private final static int NUM_CLEF_NOTES = 25;
 
     private boolean enable_show_correct;
+    private boolean enable_vibration_on_wrong;
 
     private ImageView clef_imageview;
     private ImageView note_imageview;
@@ -92,12 +94,14 @@ public class QuizActivity extends Activity {
 
         boolean practice = extras.getBoolean ("practice", false);
         if (practice) {
-        	limit               = options.getInt ("practice_limit", 50);
-        	enable_show_correct = options.getBoolean ("enable_show_correct", true);
+        	limit                     = options.getInt ("practice_limit", 50);
+        	enable_show_correct       = options.getBoolean ("enable_show_correct", true);
+            enable_vibration_on_wrong = options.getBoolean ("enable_vibration_on_wrong", true);
         }
         else {
-        	limit               = options.getInt ("quiz_limit", 10);
-        	enable_show_correct = false;
+        	limit                     = options.getInt ("quiz_limit", 10);
+        	enable_show_correct       = false;
+            enable_vibration_on_wrong = false;
         }
         //Log.i ("info", String.format("Limit: %d", limit));
 
@@ -231,10 +235,10 @@ public class QuizActivity extends Activity {
 
 					try {
 						Thread.sleep (1000);
-					} catch (InterruptedException e) {};
+					} catch (InterruptedException e) {}
 
 				} while (!time_elapsed_terminate);
-			};
+			}
 		});
 
         time_elapsed_terminate = false;
@@ -247,7 +251,7 @@ public class QuizActivity extends Activity {
 	    	time_update_thread.interrupt ();
 	    	try {
 				time_update_thread.join ();
-			} catch (InterruptedException e) {};
+			} catch (InterruptedException e) {}
 			time_update_thread = null;
     	}
     }
@@ -285,7 +289,9 @@ public class QuizActivity extends Activity {
                 current_button.setTypeface (Typeface.DEFAULT_BOLD);
             }
 
-            ((Vibrator) getSystemService("vibrator")).vibrate(250L);
+            if (enable_vibration_on_wrong) {
+                ((Vibrator) getSystemService(Context.VIBRATOR_SERVICE)).vibrate(250L);
+            }
         }
         else {
             ++num_right;

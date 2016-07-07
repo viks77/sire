@@ -52,12 +52,12 @@
             android:textSize="24.0sp" />
 
         <Button
-            android:id="@+id/stats_button"
+            android:id="@+id/options_button"
             android:layout_width="fill_parent"
             android:layout_height="0dip"
             android:layout_weight="1.0"
-            android:onClick="onStatsClicked"
-            android:text="@string/stats_button"
+            android:onClick="onOptionsClicked"
+            android:text="@string/options_button"
             android:textSize="24.0sp" />
 
     </LinearLayout>

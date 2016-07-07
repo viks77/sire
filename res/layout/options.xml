@@ -139,6 +139,12 @@
             android:layout_height="wrap_content"
             android:text="@string/enable_show_correct" />
 
+        <CheckBox
+            android:id="@+id/enable_vibration_on_wrong"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enable_vibration_on_wrong" />
+
     </LinearLayout>
 
     <TextView

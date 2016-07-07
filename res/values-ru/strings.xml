@@ -1,12 +1,12 @@
 <resources>
 
     <string name="app_name">Music Sight Reading</string>
-    <string name="menu_settings">Настройки</string>
     <string name="version">Версия %s</string>
     <string name="slogan">Читай ноты быстрее!</string>
     <string name="practice_button">Практика</string>
     <string name="quiz_button">Экзамен</string>
     <string name="stats_button">Статистика</string>
+    <string name="options_button">Настройки</string>
     <string name="clefs">Ключи</string>
     <string name="treble">Скрипичный</string>
     <string name="bass">Басовый</string>
@@ -14,6 +14,7 @@
     <string name="alto">Альтовый</string>
     <string name="practice">Практика</string>
     <string name="enable_show_correct">Показывать правильный ответ при ошибке</string>
+    <string name="enable_vibration_on_wrong">Вибрировать при ошибке</string>
     <string name="save_options">Сохранить</string>
     <string name="cancel_options">Отменить</string>
     <string name="wrong_attempts">Неправильные попытки</string>

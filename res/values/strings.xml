@@ -1,7 +1,6 @@
 <resources>
 
     <string name="app_name">Music Sight Reading</string>
-    <string name="menu_settings">Settings</string>
     <string name="version">Version %s</string>
     <string name="slogan">Read music sheets faster!</string>
     <string name="practice_button">Practice</string>
@@ -14,8 +13,8 @@
     <string name="tenor">Tenor</string>
     <string name="alto">Alto</string>
     <string name="practice">Practice</string>
-    <string name="enable_random">Randomize</string>
     <string name="enable_show_correct">Show correct answers when wrong</string>
+    <string name="enable_vibration_on_wrong">Vibration on wrong answers</string>
     <string name="save_options">Save</string>
     <string name="cancel_options">Cancel</string>
     <string name="wrong_attempts">Wrong Attempts</string>
