@@ -1,4 +1,4 @@
-package com.viks.sire;
+package com.viks.sire2;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

@@ -1,4 +1,4 @@
-package com.viks.sire;
+package com.viks.sire2;
 
 import android.os.Bundle;
 import android.view.View;
