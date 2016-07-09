@@ -29,6 +29,7 @@
     <string name="minutes_seconds_mseconds" formatted="false">%d:%02d.%03dс</string>
     <string name="seconds_mseconds" formatted="false">%02d.%03dс</string>
     <string name="zero_seconds">0с</string>
+    <string name="avg_note_time">Среднее время на ноту</string>
 
     <string-array name="note_names_english">
         <item>A</item>

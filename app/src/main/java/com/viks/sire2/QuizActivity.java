@@ -54,6 +54,8 @@ public class QuizActivity extends Activity {
     private int num_right;
     private int num_wrong;
     private long time_start;
+    private long time_note_start;
+    private long time_sum = 0;
     private int limit;
 
     private int current_quiz;
@@ -319,6 +321,8 @@ public class QuizActivity extends Activity {
         }
         else {
             ++num_right;
+            long time_end = System.currentTimeMillis ();
+            time_sum += (long)(time_end - time_note_start);
 
             if (enable_show_correct) {
                 current_button.setTextColor (default_color);
@@ -326,12 +330,11 @@ public class QuizActivity extends Activity {
             }
 
             if (!next_note ()) {
-                long time_end = System.currentTimeMillis ();
-
                 Intent intent = new Intent (this, ResultsActivity.class);
                 intent.putExtra ("num_right", num_right);
                 intent.putExtra ("num_wrong", num_wrong);
                 intent.putExtra ("total_time", (long)(time_end - time_start));
+                intent.putExtra ("avg_note_time", (long) Math.round ((double)time_sum / (double)limit));
                 startActivity (intent);
                 stop ();
                 finish ();
@@ -352,6 +355,8 @@ public class QuizActivity extends Activity {
 
         current_note   = (first_note[clef] + note) % 7;
         current_button = buttons[current_note];
+
+        time_note_start = System.currentTimeMillis ();
 
         SVG svg;
         svg = SVGParser.getSVGFromResource (getResources (), clefs[clef]);

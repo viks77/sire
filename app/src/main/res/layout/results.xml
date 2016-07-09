@@ -22,7 +22,7 @@
             android:padding="2.0dip"
             android:text="@string/wrong_attempts"
             android:textColor="#ff999999"
-            android:textSize="36.0sp" />
+            android:textSize="20dp" />
 
         <TextView
             android:onClick="onReturn"
@@ -32,7 +32,7 @@
             android:gravity="center"
             android:padding="2.0dip"
             android:text="0"
-            android:textSize="56.0sp"
+            android:textSize="56dp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -52,7 +52,7 @@
             android:padding="2.0dip"
             android:text="@string/total_time"
             android:textColor="#ff999999"
-            android:textSize="36.0sp" />
+            android:textSize="20dp" />
 
         <TextView
             android:onClick="onReturn"
@@ -62,8 +62,37 @@
             android:gravity="center"
             android:padding="2.0dip"
             android:text="01:20.000s"
-            android:textSize="56.0sp"
+            android:textSize="42dp"
             android:textStyle="bold" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5.0dip" >
+
+        <TextView
+            android:onClick="onReturn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="2.0dip"
+            android:text="@string/avg_note_time"
+            android:textColor="#ff999999"
+            android:textSize="20dp" />
+
+        <TextView
+            android:onClick="onReturn"
+            android:id="@+id/avg_note_time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="2.0dip"
+            android:text="01:20.000s"
+            android:textSize="42dp"
+            android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

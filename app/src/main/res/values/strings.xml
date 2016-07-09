@@ -29,6 +29,7 @@
     <string name="minutes_seconds_mseconds" formatted="false">%d:%02d.%03ds</string>
     <string name="seconds_mseconds" formatted="false">%02d.%03ds</string>
     <string name="zero_seconds">0s</string>
+    <string name="avg_note_time">Average Note Time</string>
 
     <string-array name="note_names_english">
         <item>A</item>
