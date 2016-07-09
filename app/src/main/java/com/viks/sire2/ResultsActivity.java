@@ -9,11 +9,13 @@ public class ResultsActivity extends Activity {
 
 	@Override
 	public void onCreate (Bundle savedInstanceState) {
-		
+
+		Bundle extras = getIntent ().getExtras ();
+		int theme_id = extras.getInt ("theme", R.style.LightTheme);
+		setTheme (theme_id);
+
 		super.onCreate (savedInstanceState);
 		setContentView (R.layout.results);
-		
-		Bundle extras = getIntent ().getExtras ();
 		
 		TextView wrong_attempts = (TextView) findViewById (R.id.wrong_attempts);
 		TextView total_time     = (TextView) findViewById (R.id.total_time);
@@ -29,13 +31,12 @@ public class ResultsActivity extends Activity {
 		int mseconds = (int) (time % 1000);
 		
 		if (minutes > 0) 
-			total_time.setText (String.format ("%d:%02d.%03ds", minutes, seconds, mseconds));
+			total_time.setText (String.format (getResources ().getString (R.string.minutes_seconds_mseconds), minutes, seconds, mseconds));
 		else
-			total_time.setText (String.format ("%d.%03ds", seconds, mseconds));
+			total_time.setText (String.format (getResources ().getString (R.string.seconds_mseconds), seconds, mseconds));
 	}
 	
 	public void onReturn (View view) {
 		finish ();
 	}
-
 }

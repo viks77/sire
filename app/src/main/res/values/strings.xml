@@ -21,6 +21,14 @@
     <string name="total_time">Total Time</string>
     <string name="quiz_limit">Number of notes</string>
     <string name="quiz">Quiz</string>
+    <string name="appearance">Appearance</string>
+    <string name="dark">Dark theme</string>
+    <string name="light">Light theme</string>
+    <string name="minutes_seconds" formatted="false">%d:%02ds</string>
+    <string name="seconds" formatted="false">%ds</string>
+    <string name="minutes_seconds_mseconds" formatted="false">%d:%02d.%03ds</string>
+    <string name="seconds_mseconds" formatted="false">%02d.%03ds</string>
+    <string name="zero_seconds">0s</string>
 
     <string-array name="note_names_english">
         <item>A</item>

@@ -11,6 +11,7 @@ import com.larvalabs.svgandroid.SVGParser;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -39,15 +40,8 @@ public class QuizActivity extends Activity {
 
     private final int[][] levels = {{ 8,16 }, { 7,17 }, { 6,18 }, { 5,19 }, { 4,20 }, { 3,21 }, { 2,22 }, { 1,23 }, { 0,24 }};
 
-    private final int[] clefs = {
-    		R.raw.treble_clef, R.raw.bass_clef, R.raw.alto_clef, R.raw.tenor_clef };
-
-    private final int[] notes = {
-    		R.raw.note01, R.raw.note02, R.raw.note03, R.raw.note04, R.raw.note05,
-    		R.raw.note06, R.raw.note07, R.raw.note08, R.raw.note09, R.raw.note10,
-    		R.raw.note11, R.raw.note12, R.raw.note13, R.raw.note14, R.raw.note15,
-    		R.raw.note16, R.raw.note17, R.raw.note18, R.raw.note19, R.raw.note20,
-    		R.raw.note21, R.raw.note22, R.raw.note23, R.raw.note24, R.raw.note25 };
+    private int[] clefs;
+    private int[] notes;
 
     private final int[] first_note = { 3,5,4,2 };
 /*
@@ -77,11 +71,42 @@ public class QuizActivity extends Activity {
     @Override
     public void onCreate (Bundle savedInstanceState) {
 
-		super.onCreate (savedInstanceState);
+        Bundle extras = getIntent ().getExtras ();
+        int theme_id = extras.getInt ("theme", R.style.LightTheme);
+        setTheme (theme_id);
+
+        super.onCreate (savedInstanceState);
         setContentView (R.layout.quiz);
 
+        SVG svg;
+        clefs = new int [4];
+        notes = new int [25];
+
+        if (theme_id == R.style.DarkTheme) {
+            svg = SVGParser.getSVGFromResource (getResources (), R.raw.dark_staff);
+
+            clefs[0] = R.raw.dark_treble_clef;
+            clefs[1] = R.raw.dark_bass_clef;
+            clefs[2] = R.raw.dark_alto_clef;
+            clefs[3] = R.raw.dark_tenor_clef;
+
+            for (int i=0;i<25;i++)
+                notes[i] = getResources ().getIdentifier (String.format ("%s_note%02d", "dark", i + 1), "raw", getPackageName());
+        }
+        else {
+            svg = SVGParser.getSVGFromResource(getResources(), R.raw.light_staff);
+
+            clefs[0] = R.raw.light_treble_clef;
+            clefs[1] = R.raw.light_bass_clef;
+            clefs[2] = R.raw.light_alto_clef;
+            clefs[3] = R.raw.light_tenor_clef;
+
+            for (int i = 0; i < 25; i++)
+                notes[i] = getResources ().getIdentifier (String.format ("%s_note%02d", "light", i + 1), "raw", getPackageName ());
+        }
+
+
         SharedPreferences options = getSharedPreferences ("sire", 0);
-        Bundle extras = getIntent ().getExtras ();
 
         boolean enable_treble_clef = options.getBoolean ("enable_treble_clef", true);
         boolean enable_bass_clef   = options.getBoolean ("enable_bass_clef",   true);
@@ -127,12 +152,11 @@ public class QuizActivity extends Activity {
         } catch (InvocationTargetException e) {
         }
 
-        SVG svg = SVGParser.getSVGFromResource (getResources (), R.raw.staff);
         staff.setImageDrawable (svg.createPictureDrawable ());
 
         time_elapsed = (TextView) findViewById (R.id.time_elapsed);
         progress     = (TextView) findViewById (R.id.progress);
-        time_elapsed.setText ("0s");
+        time_elapsed.setText (getResources ().getString (R.string.zero_seconds));
         progress.setText ("0 / 0");
 
 
@@ -193,7 +217,7 @@ public class QuizActivity extends Activity {
 	       		q = NUM_CLEF_NOTES*c + n;
 
 	       		if (lq != q) {
-	       			quiz.add (Integer.valueOf (q));
+	       			quiz.add (q);
 	       			lq = q;
 	       		}
 	       	}
@@ -204,7 +228,7 @@ public class QuizActivity extends Activity {
         }
     }
 
-    void update_time_elapsed () {
+    private void update_time_elapsed () {
 		long time_end = System.currentTimeMillis ();
 
 		long time = (long)(time_end - time_start);
@@ -214,12 +238,12 @@ public class QuizActivity extends Activity {
 		int seconds  = (int) (time / 1000);
 
 		if (minutes > 0)
-			time_elapsed.setText (String.format ("%d:%02ds", minutes, seconds));
+			time_elapsed.setText (String.format (getResources ().getString (R.string.minutes_seconds), minutes, seconds));
 		else
-			time_elapsed.setText (String.format ("%ds", seconds));
+			time_elapsed.setText (String.format (getResources ().getString (R.string.seconds), seconds));
     }
 
-    void start () {
+    private void start () {
         update_time_elapsed ();
 
         time_update_thread = new Thread (new Runnable () {
@@ -245,7 +269,7 @@ public class QuizActivity extends Activity {
 		time_update_thread.start ();
     }
 
-    void stop () {
+    private void stop () {
     	if (time_update_thread != null) {
     		time_elapsed_terminate = true;
 	    	time_update_thread.interrupt ();
@@ -278,7 +302,7 @@ public class QuizActivity extends Activity {
     public void onKeyF (View view) { clicked (5); }
     public void onKeyG (View view) { clicked (6); }
 
-    void clicked (int note_id)
+    private void clicked (int note_id)
     {
         if (note_id != current_note)
         {
@@ -315,7 +339,7 @@ public class QuizActivity extends Activity {
         }
     }
 
-    boolean next_note ()
+    private boolean next_note ()
     {
         if (quiz.size () <= 0) return false;
 

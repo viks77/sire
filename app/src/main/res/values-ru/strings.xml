@@ -21,6 +21,14 @@
     <string name="total_time">Время</string>
     <string name="quiz_limit">Количество нот</string>
     <string name="quiz">Экзамен</string>
+    <string name="appearance">Внешний вид</string>
+    <string name="dark">Темная тема</string>
+    <string name="light">Светлая тема</string>
+    <string name="minutes_seconds" formatted="false">%d:%02dс</string>
+    <string name="seconds" formatted="false">%dс</string>
+    <string name="minutes_seconds_mseconds" formatted="false">%d:%02d.%03dс</string>
+    <string name="seconds_mseconds" formatted="false">%02d.%03dс</string>
+    <string name="zero_seconds">0с</string>
 
     <string-array name="note_names_english">
         <item>A</item>
