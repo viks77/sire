@@ -69,15 +69,18 @@ public class QuizActivity extends Activity {
 /*
     private final int[][] clef_notes = { treble_notes, bass_notes, alto_notes, tenor_notes };
  */
+    private int theme_id;
+
 
     @Override
     public void onCreate (Bundle savedInstanceState) {
 
+        super.onCreate (savedInstanceState);
+
         Bundle extras = getIntent ().getExtras ();
-        int theme_id = extras.getInt ("theme", R.style.LightTheme);
+        theme_id = extras.getInt ("theme", R.style.LightTheme);
         setTheme (theme_id);
 
-        super.onCreate (savedInstanceState);
         setContentView (R.layout.quiz);
 
         SVG svg;
@@ -331,6 +334,7 @@ public class QuizActivity extends Activity {
 
             if (!next_note ()) {
                 Intent intent = new Intent (this, ResultsActivity.class);
+                intent.putExtra ("theme", theme_id);
                 intent.putExtra ("num_right", num_right);
                 intent.putExtra ("num_wrong", num_wrong);
                 intent.putExtra ("total_time", (long)(time_end - time_start));

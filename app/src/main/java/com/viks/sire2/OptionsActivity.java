@@ -40,12 +40,13 @@ public class OptionsActivity extends Activity {
     @Override
     public void onCreate (Bundle savedInstanceState) {
 
+		super.onCreate (savedInstanceState);
+
 		Bundle extras = getIntent ().getExtras ();
 		int theme_id = extras.getInt ("theme", R.style.LightTheme);
 		setTheme (theme_id);
 
-		super.onCreate (savedInstanceState);
-        setContentView (R.layout.options);
+		setContentView (R.layout.options);
  
         options = getSharedPreferences ("sire", 0);
 

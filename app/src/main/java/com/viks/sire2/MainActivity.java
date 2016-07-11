@@ -16,10 +16,11 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate (Bundle savedInstanceState) {
 
+        super.onCreate (savedInstanceState);
+
         theme_id = getThemeOption();
         setTheme (theme_id);
 
-        super.onCreate (savedInstanceState);
         setContentView (R.layout.main);
 
         String version;

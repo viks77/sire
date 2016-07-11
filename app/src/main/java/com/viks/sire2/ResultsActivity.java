@@ -10,11 +10,12 @@ public class ResultsActivity extends Activity {
 	@Override
 	public void onCreate (Bundle savedInstanceState) {
 
+		super.onCreate (savedInstanceState);
+
 		Bundle extras = getIntent ().getExtras ();
 		int theme_id = extras.getInt ("theme", R.style.LightTheme);
 		setTheme (theme_id);
 
-		super.onCreate (savedInstanceState);
 		setContentView (R.layout.results);
 		
 		TextView wrong_attempts = (TextView) findViewById (R.id.wrong_attempts);

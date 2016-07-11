@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "com.viks.sire2"
         minSdkVersion 4
-        targetSdkVersion 4
+        targetSdkVersion 14
     }
     buildTypes {
         release {
