@@ -127,7 +127,9 @@
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:ems="3"
-                android:inputType="number" >
+                android:inputType="number"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
             </EditText>
 
@@ -181,7 +183,9 @@
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:ems="3"
-                android:inputType="number" >
+                android:inputType="number"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
             </EditText>
 
@@ -268,14 +272,14 @@
         <Button
             android:id="@+id/save_button"
             android:onClick="onSaveClicked"
-            android:layout_width="100.0dip"
+            android:layout_width="120.0dip"
             android:layout_height="wrap_content"
             android:text="@string/save_options" />
 
         <Button
             android:id="@+id/cancel_button"
             android:onClick="onCancelClicked"
-            android:layout_width="100.0dip"
+            android:layout_width="120.0dip"
             android:layout_height="wrap_content"
             android:text="@string/cancel_options" />
 

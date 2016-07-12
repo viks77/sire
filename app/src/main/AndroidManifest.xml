@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.viks.sire2"
-    android:versionCode="9"
-    android:versionName="2.0.5" >
+    android:versionCode="10"
+    android:versionName="2.0.6" >
 
     <uses-permission android:name="android.permission.VIBRATE" />
 
@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".QuizActivity" ></activity>
         <activity android:name=".ResultsActivity" ></activity>
-        <activity android:name=".OptionsActivity"  android:configChanges="keyboardHidden"></activity>
+        <activity android:name=".OptionsActivity"  android:windowSoftInputMode="stateHidden" android:configChanges="keyboardHidden"></activity>
     </application>
 
 </manifest>
