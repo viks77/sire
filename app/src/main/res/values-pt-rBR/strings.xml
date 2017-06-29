@@ -1,0 +1,58 @@
+<resources>
+
+    <string name="app_name">Music Sight Reading</string>
+    <string name="version">Versão %s</string>
+    <string name="slogan">Leia partituras mais rapidamente!</string>
+    <string name="practice_button">Praticar</string>
+    <string name="quiz_button">Quiz</string>
+    <string name="stats_button">Estatísticas</string>
+    <string name="options_button">Opções</string>
+    <string name="clefs">Claves</string>
+    <string name="treble">Agudos</string>
+    <string name="bass">Graves</string>
+    <string name="tenor">Tenor</string>
+    <string name="alto">Alto</string>
+    <string name="practice">Praticar</string>
+    <string name="enable_show_correct">Mostre as respostas corretas quando estiver errado</string>
+    <string name="enable_vibration_on_wrong">Vibrar em respostas incorretas</string>
+    <string name="save_options">Salvar</string>
+    <string name="cancel_options">Cancelar</string>
+    <string name="wrong_attempts">Tentativas Incorretas</string>
+    <string name="total_time">Tempo Total</string>
+    <string name="quiz_limit">Número de notas</string>
+    <string name="quiz">Quiz</string>
+    <string name="appearance">Aparência</string>
+    <string name="dark">Tema escuro</string>
+    <string name="light">Tema claro</string>
+    <string name="minutes_seconds" formatted="false">%d:%02ds</string>
+    <string name="seconds" formatted="false">%ds</string>
+    <string name="minutes_seconds_mseconds" formatted="false">%d:%02d.%03ds</string>
+    <string name="seconds_mseconds" formatted="false">%02d.%03ds</string>
+    <string name="zero_seconds">0s</string>
+    <string name="avg_note_time">Tempo Médio da Nota</string>
+
+    <string-array name="note_names_english">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+    </string-array>
+    <string-array name="note_names_italian">
+        <item>La</item>
+        <item>Si</item>
+        <item>Do</item>
+        <item>Re</item>
+        <item>Mi</item>
+        <item>Fa</item>
+        <item>Sol</item>
+    </string-array>
+
+    <string name="note_naming_style">Estilo de nomes das notas</string>
+    <string name="note_naming_english">Inglês (C,D,E,F,G,A,B)</string>
+    <string name="note_naming_italian">Italiano (Do,Re,Mi,Fa,Sol,La,Si)</string>
+    <string name="difficulty_level">Nível de dificuldade</string>
+
+</resources>
