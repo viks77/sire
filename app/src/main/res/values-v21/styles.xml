@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <style name="DarkTheme" parent="@android:style/Theme.Holo.NoActionBar">
+    </style>
+    <style name="LightTheme" parent="@android:style/Theme.Holo.Light" >
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+</resources>

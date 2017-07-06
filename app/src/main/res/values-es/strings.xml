@@ -23,6 +23,9 @@
     <string name="quiz">Test</string>
 
     <!-- strings needs translation -->
+    <string name="soprano">Soprano</string>
+    <string name="mezzo_soprano">Mezzo Soprano</string>
+    <string name="baritone">Baritone</string>
     <string name="appearance">Appearance</string>
     <string name="dark">Dark theme</string>
     <string name="light">Light theme</string>
@@ -39,7 +42,7 @@
         <item>B</item>
         <item>C</item>
         <item>D</item>
-        <item>D</item>
+        <item>E</item>
         <item>F</item>
         <item>G</item>
     </string-array>

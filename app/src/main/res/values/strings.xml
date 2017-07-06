@@ -8,10 +8,15 @@
     <string name="stats_button">Statistics</string>
     <string name="options_button">Options</string>
     <string name="clefs">Clefs</string>
+
     <string name="treble">Treble</string>
-    <string name="bass">Bass</string>
-    <string name="tenor">Tenor</string>
+    <string name="soprano">Soprano</string>
+    <string name="mezzo_soprano">Mezzo Soprano</string>
     <string name="alto">Alto</string>
+    <string name="tenor">Tenor</string>
+    <string name="baritone">Baritone</string>
+    <string name="bass">Bass</string>
+
     <string name="practice">Practice</string>
     <string name="enable_show_correct">Show correct answers when wrong</string>
     <string name="enable_vibration_on_wrong">Vibration on wrong answers</string>

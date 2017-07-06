@@ -11,7 +11,6 @@ import com.larvalabs.svgandroid.SVGParser;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +23,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+
 
 public class QuizActivity extends Activity {
 
@@ -40,16 +40,12 @@ public class QuizActivity extends Activity {
 
     private final int[][] levels = {{ 8,16 }, { 7,17 }, { 6,18 }, { 5,19 }, { 4,20 }, { 3,21 }, { 2,22 }, { 1,23 }, { 0,24 }};
 
-    private int[] clefs;
+    private int[] clefs;	// treble, soprano, mezzo soprano, alto, tenor, baritone, bass
     private int[] notes;
 
-    private final int[] first_note = { 3,5,4,2 };
-/*
-    private final int[] treble_notes = { 3,4,5,6,0,1,2,3,4,5,6,0,1,2,3,4,5,6,0,1,2,3,4,5,6 };
-    private final int[] bass_notes   = { 5,6,0,1,2,3,4,5,6,0,1,2,3,4,5,6,0,1,2,3,4,5,6,0,1 };
-    private final int[] alto_notes   = { 4,5,6,0,1,2,3,4,5,6,0,1,2,3,4,5,6,0,1,2,3,4,5,6,0 };
-    private final int[] tenor_notes  = { 2,3,4,5,6,0,1,2,3,4,5,6,0,1,2,3,4,5,6,0,1,2,3,4,5 };
- */
+	// 0 do, 1 re, 2 mi, 3 fa, 4 sol, 5 la, 6 si
+    private final int[] first_note = { /*treble*/3, /*soprano*/1, /*mezzo soprano*/6, /*alto*/4, /*tenor*/2, /*baritone*/0, /*bass*/5 };
+
     private LinkedList<Integer> quiz;
     private int num_right;
     private int num_wrong;
@@ -66,9 +62,7 @@ public class QuizActivity extends Activity {
     private TextView time_elapsed;
     private TextView progress;
     private boolean time_elapsed_terminate;
-/*
-    private final int[][] clef_notes = { treble_notes, bass_notes, alto_notes, tenor_notes };
- */
+
     private int theme_id;
 
 
@@ -84,16 +78,19 @@ public class QuizActivity extends Activity {
         setContentView (R.layout.quiz);
 
         SVG svg;
-        clefs = new int [4];
+        clefs = new int [7];
         notes = new int [25];
 
         if (theme_id == R.style.DarkTheme) {
             svg = SVGParser.getSVGFromResource (getResources (), R.raw.dark_staff);
 
             clefs[0] = R.raw.dark_treble_clef;
-            clefs[1] = R.raw.dark_bass_clef;
-            clefs[2] = R.raw.dark_alto_clef;
-            clefs[3] = R.raw.dark_tenor_clef;
+            clefs[1] = R.raw.dark_soprano_clef;
+            clefs[2] = R.raw.dark_mezzo_soprano_clef;
+            clefs[3] = R.raw.dark_alto_clef;
+            clefs[4] = R.raw.dark_tenor_clef;
+            clefs[5] = R.raw.dark_baritone_clef;
+            clefs[6] = R.raw.dark_bass_clef;
 
             for (int i=0;i<25;i++)
                 notes[i] = getResources ().getIdentifier (String.format ("%s_note%02d", "dark", i + 1), "raw", getPackageName());
@@ -102,9 +99,12 @@ public class QuizActivity extends Activity {
             svg = SVGParser.getSVGFromResource(getResources(), R.raw.light_staff);
 
             clefs[0] = R.raw.light_treble_clef;
-            clefs[1] = R.raw.light_bass_clef;
-            clefs[2] = R.raw.light_alto_clef;
-            clefs[3] = R.raw.light_tenor_clef;
+            clefs[1] = R.raw.light_soprano_clef;
+            clefs[2] = R.raw.light_mezzo_soprano_clef;
+            clefs[3] = R.raw.light_alto_clef;
+            clefs[4] = R.raw.light_tenor_clef;
+            clefs[5] = R.raw.light_baritone_clef;
+            clefs[6] = R.raw.light_bass_clef;
 
             for (int i = 0; i < 25; i++)
                 notes[i] = getResources ().getIdentifier (String.format ("%s_note%02d", "light", i + 1), "raw", getPackageName ());
@@ -113,10 +113,13 @@ public class QuizActivity extends Activity {
 
         SharedPreferences options = getSharedPreferences ("sire", 0);
 
-        boolean enable_treble_clef = options.getBoolean ("enable_treble_clef", true);
-        boolean enable_bass_clef   = options.getBoolean ("enable_bass_clef",   true);
-        boolean enable_alto_clef   = options.getBoolean ("enable_alto_clef",   false);
-        boolean enable_tenor_clef  = options.getBoolean ("enable_tenor_clef",  false);
+        boolean enable_treble_clef        = options.getBoolean ("enable_treble_clef",        true);
+        boolean enable_soprano_clef       = options.getBoolean ("enable_soprano_clef",       false);
+        boolean enable_mezzo_soprano_clef = options.getBoolean ("enable_mezzo_soprano_clef", false);
+        boolean enable_alto_clef          = options.getBoolean ("enable_alto_clef",          false);
+        boolean enable_tenor_clef         = options.getBoolean ("enable_tenor_clef",         false);
+        boolean enable_baritone_clef      = options.getBoolean ("enable_baritone_clef",      false);
+        boolean enable_bass_clef          = options.getBoolean ("enable_bass_clef",          true);
 
         int note_naming_style = options.getInt ("note_naming_style", 0);
         int difficulty_level = options.getInt ("difficulty_level", 0);
@@ -203,13 +206,16 @@ public class QuizActivity extends Activity {
         	int a = levels [difficulty_level][0];
         	int b = levels [difficulty_level][1];
 
-        	int rand_clefs[] = new int[4];
+        	int rand_clefs[] = new int[7];
         	int rand_clefs_count = 0;
 
-	        if (enable_treble_clef) rand_clefs[rand_clefs_count++] = 0;
-	        if (enable_bass_clef)   rand_clefs[rand_clefs_count++] = 1;
-	        if (enable_alto_clef)   rand_clefs[rand_clefs_count++] = 2;
-	        if (enable_tenor_clef)  rand_clefs[rand_clefs_count++] = 3;
+	        if (enable_treble_clef)        rand_clefs[rand_clefs_count++] = 0;
+	        if (enable_soprano_clef)       rand_clefs[rand_clefs_count++] = 1;
+	        if (enable_mezzo_soprano_clef) rand_clefs[rand_clefs_count++] = 2;
+	        if (enable_alto_clef)          rand_clefs[rand_clefs_count++] = 3;
+	        if (enable_tenor_clef)         rand_clefs[rand_clefs_count++] = 4;
+	        if (enable_baritone_clef)      rand_clefs[rand_clefs_count++] = 5;
+	        if (enable_bass_clef)          rand_clefs[rand_clefs_count++] = 6;
 
 	       	Random rand = new Random ();
 
@@ -365,6 +371,9 @@ public class QuizActivity extends Activity {
         SVG svg;
         svg = SVGParser.getSVGFromResource (getResources (), clefs[clef]);
         clef_imageview.setImageDrawable (svg.createPictureDrawable ());
+
+        //set vector drawable progmatically to ImageView
+        //clef_imageview.setImageResource (R.drawable.ic_dark_c_clef);
 
         svg = SVGParser.getSVGFromResource (getResources (), notes[note]);
         note_imageview.setImageDrawable (svg.createPictureDrawable ());

@@ -8,10 +8,15 @@
     <string name="stats_button">Статистика</string>
     <string name="options_button">Настройки</string>
     <string name="clefs">Ключи</string>
+
     <string name="treble">Скрипичный</string>
-    <string name="bass">Басовый</string>
-    <string name="tenor">Тенорный</string>
+    <string name="soprano">Сопрановый</string>
+    <string name="mezzo_soprano">Меццо-сопрановый</string>
     <string name="alto">Альтовый</string>
+    <string name="tenor">Теноровый</string>
+    <string name="baritone">Баритоновый</string>
+    <string name="bass">Басовый</string>
+
     <string name="practice">Практика</string>
     <string name="enable_show_correct">Показывать правильный ответ при ошибке</string>
     <string name="enable_vibration_on_wrong">Вибрировать при ошибке</string>

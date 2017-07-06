@@ -35,15 +35,34 @@
                 android:text="@string/treble" />
 
             <CheckBox
-                android:id="@+id/enable_bass_clef"
+                android:id="@+id/enable_soprano_clef"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/bass" />
+                android:text="@string/soprano" />
 
         </TableRow>
 
         <TableRow
             android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/enable_mezzo_soprano_clef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mezzo_soprano" />
+
+            <CheckBox
+                android:id="@+id/enable_alto_clef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/alto" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
@@ -54,10 +73,23 @@
                 android:text="@string/tenor" />
 
             <CheckBox
-                android:id="@+id/enable_alto_clef"
+                android:id="@+id/enable_baritone_clef"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/alto" />
+                android:text="@string/baritone" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/enable_bass_clef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bass" />
 
         </TableRow>
     </TableLayout>

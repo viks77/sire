@@ -12,6 +12,11 @@
     <string name="bass">Graves</string>
     <string name="tenor">Tenor</string>
     <string name="alto">Alto</string>
+
+    <string name="soprano">Soprano</string>
+    <string name="mezzo_soprano">Mezzo Soprano</string>
+    <string name="baritone">Barítono</string>
+
     <string name="practice">Praticar</string>
     <string name="enable_show_correct">Mostre as respostas corretas quando estiver errado</string>
     <string name="enable_vibration_on_wrong">Vibrar em respostas incorretas</string>

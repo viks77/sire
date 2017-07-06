@@ -17,9 +17,13 @@ public class OptionsActivity extends Activity {
     private SharedPreferences options;
 
 	private CheckBox enable_treble_clef_check;
-    private CheckBox enable_bass_clef_check; 
+    private CheckBox enable_soprano_clef_check;
+    private CheckBox enable_mezzo_soprano_clef_check;
     private CheckBox enable_alto_clef_check;
     private CheckBox enable_tenor_clef_check;
+    private CheckBox enable_baritone_clef_check;
+    private CheckBox enable_bass_clef_check; 
+
     private CheckBox enable_show_correct_check;
 	private CheckBox enable_vibration_on_wrong_check;
 
@@ -51,9 +55,13 @@ public class OptionsActivity extends Activity {
         options = getSharedPreferences ("sire", 0);
 
         enable_treble_clef_check        = (CheckBox) findViewById (R.id.enable_treble_clef);
-        enable_bass_clef_check          = (CheckBox) findViewById (R.id.enable_bass_clef);
+        enable_soprano_clef_check       = (CheckBox) findViewById (R.id.enable_soprano_clef);
+        enable_mezzo_soprano_clef_check = (CheckBox) findViewById (R.id.enable_mezzo_soprano_clef);
         enable_alto_clef_check          = (CheckBox) findViewById (R.id.enable_alto_clef);
         enable_tenor_clef_check         = (CheckBox) findViewById (R.id.enable_tenor_clef);
+        enable_baritone_clef_check      = (CheckBox) findViewById (R.id.enable_baritone_clef);
+        enable_bass_clef_check          = (CheckBox) findViewById (R.id.enable_bass_clef);
+
         enable_show_correct_check       = (CheckBox) findViewById (R.id.enable_show_correct);
 		enable_vibration_on_wrong_check = (CheckBox) findViewById (R.id.enable_vibration_on_wrong);
 
@@ -73,9 +81,13 @@ public class OptionsActivity extends Activity {
 
         if (savedInstanceState == null) {
 	        enable_treble_clef_check.setChecked (options.getBoolean ("enable_treble_clef", true));
-	        enable_bass_clef_check.setChecked (options.getBoolean ("enable_bass_clef", true));
+	        enable_soprano_clef_check.setChecked (options.getBoolean ("enable_soprano_clef", true));
+	        enable_mezzo_soprano_clef_check.setChecked (options.getBoolean ("enable_mezzo_soprano_clef", true));
 	        enable_alto_clef_check.setChecked (options.getBoolean ("enable_alto_clef", false));
 	        enable_tenor_clef_check.setChecked (options.getBoolean ("enable_tenor_clef", false));
+	        enable_baritone_clef_check.setChecked (options.getBoolean ("enable_baritone_clef", true));
+	        enable_bass_clef_check.setChecked (options.getBoolean ("enable_bass_clef", true));
+
 	        enable_show_correct_check.setChecked (options.getBoolean ("enable_show_correct", true));
 			enable_vibration_on_wrong_check.setChecked (options.getBoolean ("enable_vibration_on_wrong", true));
 	
@@ -125,9 +137,12 @@ public class OptionsActivity extends Activity {
 		save_options_block:
 		{
 			if (!enable_treble_clef_check.isChecked () && 
-			    !enable_bass_clef_check.isChecked ()   &&
-			    !enable_alto_clef_check.isChecked ()   &&
-			    !enable_tenor_clef_check.isChecked ())
+			    !enable_soprano_clef_check.isChecked () &&
+			    !enable_mezzo_soprano_clef_check.isChecked () &&
+			    !enable_alto_clef_check.isChecked () &&
+			    !enable_tenor_clef_check.isChecked () &&
+			    !enable_baritone_clef_check.isChecked () &&
+			    !enable_bass_clef_check.isChecked ())
 			{
 			    Toast.makeText (getApplicationContext (), "Must select at least one clef!", Toast.LENGTH_SHORT).show ();
 			    break save_options_block;
@@ -149,9 +164,13 @@ public class OptionsActivity extends Activity {
 			try {
 
 				edit_options.putBoolean("enable_treble_clef", enable_treble_clef_check.isChecked());
-				edit_options.putBoolean("enable_bass_clef", enable_bass_clef_check.isChecked());
+				edit_options.putBoolean("enable_soprano_clef", enable_soprano_clef_check.isChecked());
+				edit_options.putBoolean("enable_mezzo_soprano_clef", enable_mezzo_soprano_clef_check.isChecked());
 				edit_options.putBoolean("enable_alto_clef", enable_alto_clef_check.isChecked());
 				edit_options.putBoolean("enable_tenor_clef", enable_tenor_clef_check.isChecked());
+				edit_options.putBoolean("enable_baritone_clef", enable_baritone_clef_check.isChecked());
+				edit_options.putBoolean("enable_bass_clef", enable_bass_clef_check.isChecked());
+
 				edit_options.putBoolean("enable_show_correct", enable_show_correct_check.isChecked());
 				edit_options.putBoolean("enable_vibration_on_wrong", enable_vibration_on_wrong_check.isChecked());
 
