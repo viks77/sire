@@ -17,8 +17,8 @@
     <string name="enable_vibration_on_wrong">Vibrar em respostas incorretas</string>
     <string name="save_options">Salvar</string>
     <string name="cancel_options">Cancelar</string>
-    <string name="wrong_attempts">Tentativas Incorretas</string>
-    <string name="total_time">Tempo Total</string>
+    <string name="wrong_attempts">Tentativas incorretas</string>
+    <string name="total_time">Tempo total</string>
     <string name="quiz_limit">Número de notas</string>
     <string name="quiz">Quiz</string>
     <string name="appearance">Aparência</string>
@@ -29,7 +29,7 @@
     <string name="minutes_seconds_mseconds" formatted="false">%d:%02d.%03ds</string>
     <string name="seconds_mseconds" formatted="false">%02d.%03ds</string>
     <string name="zero_seconds">0s</string>
-    <string name="avg_note_time">Tempo Médio da Nota</string>
+    <string name="avg_note_time">Tempo médio da nota</string>
 
     <string-array name="note_names_english">
         <item>A</item>
